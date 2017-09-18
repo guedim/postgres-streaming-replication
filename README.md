@@ -45,7 +45,7 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 ![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
 
 
-5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in 5050 port) and register the master database.<a name="masterdb"></a>
+5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5050** port) and register the master database.<a name="masterdb"></a>
 
 > Open the PgAdmin for master database with the next credentials: 
 >  - **user:** masterdatabase
@@ -56,102 +56,48 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 > Register the master database with:
 > - **user:** postgres
 > - **password:** postgres
-> - **password:** 5432
+> - **password:** *5432*
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
 
-6) In the [Landoop](http://www.landoop.com/) portal, create and set up the Postgres Kafka  using the [JDBC](http://docs.confluent.io/current/connect/connect-jdbc/docs/index.html) connector:<a name="connector"></a>
-```sh
-name=source-postgres
-connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
-tasks.max=1
-connection.url=jdbc:postgresql://pwd10-0-7-3-5432.host2.labs.play-with-docker.com:5432/postgres?user=postgres&password=postgres
-topic.prefix=postgres_
-mode=timestamp+incrementing
-incrementing.column.name=id
-timestamp.column.name=updated_at
-value.converter=org.apache.kafka.connect.json.JsonConverter
-key.converter=org.apache.kafka.connect.json.JsonConverter
-```
-> Dont forget to change the **connection.url parameter** using the host with the 5432 port
-
-![Landoop - Postgres](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/landoop-postgres.png "Landoop - Postgres")
-
-
-7) In the [Landoop](http://www.landoop.com/) portal, create and set up the [kafka elastic Sink Confluent](http://docs.confluent.io/current/connect/connect-elasticsearch/docs/elasticsearch_connector.html):<a name="sink"></a>
-```sh
-name=ElasticsearchSinkConnector
-connector.class=io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
-topics=postgres_users
-tasks.max=1
-connection.url=http://pwd10-0-7-3-9200.host2.labs.play-with-docker.com:9200
-type.name=kafka-connect
-topic.key.ignore=true
-key.ignore=true
-value.converter=org.apache.kafka.connect.json.JsonConverter
-key.converter=org.apache.kafka.connect.json.JsonConverter
-topic.schema.ignore=true
-```
-> Dont forget to change the **connection.url** parameter using the host with the 9200 port
-
-![Landoop - ElasticSearch](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/landoop-es.png "Landoop - ElasticSearch")
-
-
-8) With a Postgres client, connect to  the database using the next credentials:<a name="postgres"></a>
-```sh
-- User: postgres
-- password: postgres
-- database: postgres
-```
-> You can use the next commands to connect in the PWD terminal:
-> docker service ps postgres-kafka-es
-> docker exec -it POSTGRES_CONTAINER_NAME /bin/bash
-> psql -U postgres -d postgres
-
-And create the table **users** and insert some sample data:
-
-
+6) Create a table and insert some data in the master database.<a name="script-master"></a>
 ```sql
--- Create the table users
-CREATE TABLE users
-(
-    id          SERIAL NOT NULL,
-    name        VARCHAR(100) NOT NULL,
-    age         INTEGER,
-    updated_at  TIMESTAMP NOT NULL DEFAULT NOW(),
-    PRIMARY KEY(id)
-);
-
--- Insert some data:
-INSERT INTO users (name, age) VALUES ('john', 26);
-INSERT INTO users (name, age) VALUES ('jane', 24);
-INSERT INTO users (name, age) VALUES ('julia', 25);
-INSERT INTO users (name, age) VALUES ('jamie', 22);
-INSERT INTO users (name, age) VALUES ('jenny', 27);
+-- Create a sample table
+CREATE TABLE replica_test (hakase varchar(100));
+-- Insert sample data
+INSERT INTO replica_test VALUES ('First data in master');
+INSERT INTO replica_test VALUES ('Second data from master database');
+INSERT INTO replica_test VALUES ('3rd and final data from master database');
 ```
+![Script master](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png "Script master")
 
-![Postgres - Insert](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/insrt-postgres.png "Postgres - Insert")
 
+7) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5060** port) and register the slave database.<a name="slavedb"></a>
 
-9) Finally, you can query the Postgres data in the kafka topic or in the ElasticSearch Tool, just click in the port 9200 and go to **_plugin/dejavu** (dont forget to use the postgres_users index):<a name="end"></a>
+> Open the PgAdmin for slave database with the next credentials: 
+>  - **user:** slavedatabase
+>  - **password:** 12345678
 
-- In the Kafka Topic
-![Kafka Postgres Topic](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/Topic.png "Kafka Postgres topic")
+![Slave database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slavedb.png "Slave database")
 
-- In the **dejavu**  ElasticSearch plugin:
+> Register the slave database with:
+> - **user:** postgres
+> - **password:** postgres
+> - **password:** *5433*
 
-```sh
-http://192.168.99.100:9200/_plugin/dejavu
+![Slave database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slaveconnection.png "Slave database")
+
+8) Finally, verify the data in the slave database:<a name="script-slave"></a>
+```sql
+-- Verify the data in the slave database
+select * from replica_test;
 ```
-
-![ElasticSearch - Dejavu](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/elastic-dejavu.png "ElasticSearch - Dejavu")
-
+![Slave - Postgres](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-slave.png "Slave - Postgres")
 
 
 ### Todos<a name="todos"></a>
 
- - How to create the sql data
- - Create all the data and configuration automatically
+ - How to use a cluster using streaming and logical replication
 
 ### License<a name="license"></a>
 ----
