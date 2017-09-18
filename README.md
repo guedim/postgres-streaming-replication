@@ -25,7 +25,11 @@ This is a sample for  master/slave [Postgres](https://www.postgresql.org/) datab
 https://play-with-docker.com
 ```
 
-![Play With Docker](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png{:height="36px" width="36px"} "Play With Docker")
+![Play With Docker](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png "Play With Docker")
+
+
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png" align="center" height="48" width="48" >
+
 
 
 2) Create one instache, however to avoid performance issues we recommend you to create a swarm cluster using the [PWD](play-with-docker.com) templates  (3 Managers and 2 Workers  or 5 Managers and no workers).<a name="swarmcluster"></a>
