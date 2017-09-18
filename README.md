@@ -31,7 +31,7 @@ https://play-with-docker.com
 
 2) Create one instache, however to avoid performance issues we recommend you to create a swarm cluster using the [PWD](play-with-docker.com) templates  (3 Managers and 2 Workers  or 5 Managers and no workers).<a name="swarmcluster"></a>
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png" align="center" height="300" width="350" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png" align="center" height="260" width="310" >
 
 
 3) Download the [docker-compose](https://docs.docker.com/compose/) file in the new instance created in the above step:<a name="dockercompose"></a>
@@ -43,7 +43,7 @@ wget https://raw.githubusercontent.com/guedim/postgres-streaming-replication/mas
 ```sh
 docker stack deploy --compose-file docker-compose.yml postgres-streaming-replication
 ```
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="500" width="700" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="400" width="600" >
 
 
 5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5050** port) and register the master database.<a name="masterdb"></a>
@@ -51,8 +51,6 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 > Open the PgAdmin for master database with the next credentials: 
 >  - **user:** masterdatabase
 >  - **password:** 12345678
-
-![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
 
 <img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png" align="CENTER" height="250" width="300" >
 
@@ -64,7 +62,7 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png" align="CENTER" height="550" width="250" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png" align="CENTER" height="450" width="250" >
 
 
 6) Create a table and insert some data in the master database.<a name="script-master"></a>
@@ -77,6 +75,9 @@ INSERT INTO replica_test VALUES ('Second data from master database');
 INSERT INTO replica_test VALUES ('3rd and final data from master database');
 ```
 ![Script master](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png "Script master")
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png" align="CENTER" height="350" width="650" >
+
+
 
 
 7) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5060** port) and register the slave database.<a name="slavedb"></a>
