@@ -45,12 +45,20 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 ![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
 
 
-5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in 5050 port) and register the master database using the ##5432 port, for example:<a name="masterdb"></a>
+5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in 5050 port) and register the master database.<a name="masterdb"></a>
 
-Open the PgAdmin for master database using: user:"masterdatabase" password: "12345678"
+> Open the PgAdmin for master database with the next credentials: 
+> **user:** masterdatabase
+> **password:** 12345678
+
+
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
 
-Register the master database using the ##5432 port
+> Register the master database with:
+> **user:** postgres
+> **password:** postgres
+> **password:** 5432
+
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
 
 6) In the [Landoop](http://www.landoop.com/) portal, create and set up the Postgres Kafka  using the [JDBC](http://docs.confluent.io/current/connect/connect-jdbc/docs/index.html) connector:<a name="connector"></a>
