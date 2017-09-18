@@ -48,16 +48,15 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in 5050 port) and register the master database.<a name="masterdb"></a>
 
 > Open the PgAdmin for master database with the next credentials: 
-> **user:** masterdatabase
-> **password:** 12345678
-
+>  - **user:** masterdatabase
+>  - **password:** 12345678
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
 
 > Register the master database with:
-> **user:** postgres
-> **password:** postgres
-> **password:** 5432
+> - **user:** postgres
+> - **password:** postgres
+> - **password:** 5432
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
 
