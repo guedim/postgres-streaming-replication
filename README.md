@@ -28,7 +28,7 @@ https://play-with-docker.com
 ![Play With Docker](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png "Play With Docker")
 
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png" align="center" height="48" width="48" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png" align="center" height="150" width="150" >
 
 
 
