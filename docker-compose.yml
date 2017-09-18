@@ -1,0 +1,47 @@
+version: '3.1'
+
+services:
+  # we will use pgadmin4 for master database.
+  pgadmin4-master:
+    image: fenglc/pgadmin4
+    ports:
+      - 5050:5050
+    links:
+      - postgres-master:postgres-master
+    environment:
+      DEFAULT_USER: masterdatabase
+      DEFAULT_PASSWORD: 12345678
+  # we will use postgres as master database.
+  postgres-master:
+    image: nebirhos/postgres-replication
+    environment:
+      POSTGRES_USER: postgres     # define credentials
+      POSTGRES_PASSWORD: postgres # define credentials
+      POSTGRES_DB: postgres       # define database
+    ports:
+      - 5432:5432                 # Postgres port	  
+  
+  # we will use pgadmin4 for slave database.
+  pgadmin4-slave:
+    image: fenglc/pgadmin4
+    ports:
+      - 5060:5050
+    links:
+      - postgres-slave:postgres-slave
+    environment:
+      DEFAULT_USER: slavedatabase
+      DEFAULT_PASSWORD: 12345678
+  
+  # we will use postgres as slave database.
+  postgres-slave:
+    image: nebirhos/postgres-replication
+    environment:
+      POSTGRES_USER: postgres     # define credentials
+      POSTGRES_PASSWORD: postgres # define credentials
+      POSTGRES_DB: postgres       # define database
+      POSTGRES_MASTER_SERVICE_HOST: postgres-master
+      REPLICATION_ROLE: slave
+    ports:
+      - 5433:5432                 # Postgres port
+    links:
+      - postgres-master
