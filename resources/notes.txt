@@ -1,0 +1,8 @@
+Links:
+
+- Postgres Streaming Replication
+https://severalnines.com/blog/become-postgresql-dba-how-setup-streaming-replication-high-availability
+https://www.howtoforge.com/tutorial/how-to-set-up-master-slave-replication-for-postgresql-96-on-ubuntu-1604/
+
+- Docker hub
+https://hub.docker.com/r/nebirhos/postgres-replication/
