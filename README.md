@@ -45,7 +45,7 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 ```
 ![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="550" width="750" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="500" width="650" >
 
 
 
@@ -56,6 +56,9 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 >  - **password:** 12345678
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
+
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png" align="CENTER" height="300" width="300" >
+
 
 > Register the master database with:
 > - **user:** postgres
