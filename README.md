@@ -72,8 +72,7 @@ INSERT INTO replica_test VALUES ('First data in master');
 INSERT INTO replica_test VALUES ('Second data from master database');
 INSERT INTO replica_test VALUES ('3rd and final data from master database');
 ```
-![Script master](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png "Script master")
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png" align="CENTER" height="270" width="650" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png" align="CENTER" height="240" width="650" >
 
 
 
@@ -84,21 +83,24 @@ INSERT INTO replica_test VALUES ('3rd and final data from master database');
 >  - **user:** slavedatabase
 >  - **password:** 12345678
 
-![Slave database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slavedb.png "Slave database")
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slavedb.png" align="CENTER" height="250" width="300" >
+
 
 > Register the slave database with:
 > - **user:** postgres
 > - **password:** postgres
 > - **password:** *5433*
 
-![Slave database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slaveconnection.png "Slave database")
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/slaveconnection.png" align="CENTER" height="380" width="250" >
+
+
 
 8) Finally, verify the data in the slave database:<a name="script-slave"></a>
 ```sql
 -- Verify the data in the slave database
 select * from replica_test;
 ```
-![Slave - Postgres](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-slave.png "Slave - Postgres")
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-slave.png" align="CENTER" height="240" width="650" >
 
 
 ### Todos<a name="todos"></a>
