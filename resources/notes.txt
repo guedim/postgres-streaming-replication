@@ -8,6 +8,8 @@ https://www.howtoforge.com/tutorial/how-to-set-up-master-slave-replication-for-p
 https://hub.docker.com/r/nebirhos/postgres-replication/
 https://hub.docker.com/r/ucalgary/postgres-bw/
 
+https://hub.docker.com/r/thirtyx/transicator-postgres/
+
 
 
 
