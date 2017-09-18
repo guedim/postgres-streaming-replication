@@ -40,19 +40,18 @@ wget https://raw.githubusercontent.com/guedim/postgres-streaming-replication/mas
 
 4) Start the services in a [Swarm Mode](https://docs.docker.com/engine/swarm/):<a name="services"></a>
 ```sh
-docker stack deploy --compose-file docker-compose.yml postgres-kafka-es
+docker stack deploy --compose-file docker-compose.yml postgres-streaming-replication
 ```
 ![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
 
 
+5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in 5050 port) and register the master database using the ##5432 port, for example:<a name="masterdb"></a>
 
-5) Go to [Landoop](http://www.landoop.com/) portal (clic in 3030 port), for example:<a name="landoop"></a>
+Open the PgAdmin for master database using: user:"masterdatabase" password: "12345678"
+![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
 
-```sh
-http://pwd10-0-7-3-3030.host2.labs.play-with-docker.com/
-```
-
-![Landoop](https://github.com/guedim/postgres-kafka-elastic/blob/master/resources/images/landoop.png "Landoop portal")
+Register the master database using the ##5432 port
+![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
 
 6) In the [Landoop](http://www.landoop.com/) portal, create and set up the Postgres Kafka  using the [JDBC](http://docs.confluent.io/current/connect/connect-jdbc/docs/index.html) connector:<a name="connector"></a>
 ```sh
