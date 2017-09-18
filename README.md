@@ -28,13 +28,16 @@ https://play-with-docker.com
 ![Play With Docker](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png "Play With Docker")
 
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png" align="center" height="150" width="1000" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/playwithdocker.png" align="center" height="250" width="1000" >
 
 
 
 2) Create one instache, however to avoid performance issues we recommend you to create a swarm cluster using the [PWD](play-with-docker.com) templates  (3 Managers and 2 Workers  or 5 Managers and no workers).<a name="swarmcluster"></a>
 
 ![Play With Docker Template](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png "Play With Docker - Template")
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png" align="center" height="250" width="250" >
+
+
 
 
 3) Download the [docker-compose](https://docs.docker.com/compose/) file in the new instance created in the above step:<a name="dockercompose"></a>
