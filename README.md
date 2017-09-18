@@ -60,9 +60,7 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 > - **password:** postgres
 > - **password:** *5432*
 
-![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
-
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png" align="CENTER" height="450" width="250" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png" align="CENTER" height="380" width="250" >
 
 
 6) Create a table and insert some data in the master database.<a name="script-master"></a>
@@ -75,7 +73,7 @@ INSERT INTO replica_test VALUES ('Second data from master database');
 INSERT INTO replica_test VALUES ('3rd and final data from master database');
 ```
 ![Script master](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png "Script master")
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png" align="CENTER" height="350" width="650" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/script-master.png" align="CENTER" height="270" width="650" >
 
 
 
