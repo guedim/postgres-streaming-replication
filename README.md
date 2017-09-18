@@ -35,7 +35,7 @@ https://play-with-docker.com
 2) Create one instache, however to avoid performance issues we recommend you to create a swarm cluster using the [PWD](play-with-docker.com) templates  (3 Managers and 2 Workers  or 5 Managers and no workers).<a name="swarmcluster"></a>
 
 ![Play With Docker Template](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png "Play With Docker - Template")
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png" align="center" height="250" width="250" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/3manager2workers.png" align="center" height="350" width="350" >
 
 
 
@@ -50,6 +50,9 @@ wget https://raw.githubusercontent.com/guedim/postgres-streaming-replication/mas
 docker stack deploy --compose-file docker-compose.yml postgres-streaming-replication
 ```
 ![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
+
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="350" width="350" >
+
 
 
 5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5050** port) and register the master database.<a name="masterdb"></a>
