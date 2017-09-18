@@ -6,3 +6,52 @@ https://www.howtoforge.com/tutorial/how-to-set-up-master-slave-replication-for-p
 
 - Docker hub
 https://hub.docker.com/r/nebirhos/postgres-replication/
+https://hub.docker.com/r/ucalgary/postgres-bw/
+
+
+
+
+
+
+- Superuser is required
+- No secuencias
+- Replicación Lógica 9.6 (extensión pglogical) no es igula a 10.0
+	- Si actualizamos a Postgres 10 toca ajustar proceso (no es tra)
+
+9.6       --->   10(instance 1)    ---> 10(instance 2) 
+pglogical        pglogical 
+                 builtin                builtin 
+
+
+
+	- PGLogical se mantendrá hasta EOL de Postgres 9.6
+		https://www.postgresql.org/message-id/CAH%2BGA0o5B89eDJjoKO-yN%3DXQEsC%2BpA2n9LuQPun0EAz9fVcUEA%40mail.gmail.com
+
+
+- Aún en 10 limitaciones con DDL
+	- http://www.postgresql-archive.org/Dealing-with-logical-replication-td5971829.html
+
+
+
+
+
+
+# Master DB
+max_connections = 500
+wal_level = hot_standby
+wal_keep_segments = 256
+max_wal_senders = 100
+hot_standby = on
+
+
+# Slave DB
+max_connections = 500
+wal_level = hot_standby
+wal_keep_segments = 256
+max_wal_senders = 100
+hot_standby = on
+
+
+
+
+
