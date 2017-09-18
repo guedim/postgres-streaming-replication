@@ -43,10 +43,7 @@ wget https://raw.githubusercontent.com/guedim/postgres-streaming-replication/mas
 ```sh
 docker stack deploy --compose-file docker-compose.yml postgres-streaming-replication
 ```
-![Docker services](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png "Docker Services")
-
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="500" width="650" >
-
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/docker-stack-deploy.png" align="CENTER" height="500" width="700" >
 
 
 5) Go to [PgAdmin](https://www.pgadmin.org/) portal (clic in **5050** port) and register the master database.<a name="masterdb"></a>
@@ -57,7 +54,7 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png "Master database")
 
-<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png" align="CENTER" height="300" width="300" >
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterdb.png" align="CENTER" height="250" width="300" >
 
 
 > Register the master database with:
@@ -66,6 +63,9 @@ docker stack deploy --compose-file docker-compose.yml postgres-streaming-replica
 > - **password:** *5432*
 
 ![Master database](https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png "Master database")
+
+<img src="https://github.com/guedim/postgres-streaming-replication/blob/master/resources/images/masterconnection.png" align="CENTER" height="550" width="250" >
+
 
 6) Create a table and insert some data in the master database.<a name="script-master"></a>
 ```sql
