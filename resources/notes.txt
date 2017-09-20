@@ -42,6 +42,13 @@ Tipos de replicación:
 https://www.postgresql.org/docs/current/static/different-replication-solutions.html
 
 
+Tools:
+EDB Adappters para datos de Postgres a otros sistemas (Postgres, mysql, hadoop)
+https://www.enterprisedb.com/product/edb-postgres-platform/edb-postgres-data-adapters
+
+JDBC para leer CDC
+https://github.com/davecramer/presentations/blob/master/JDBC%20Performance%20Scale%2015x.pdf
+
 
 # Master DB
 max_connections = 500
