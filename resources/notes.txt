@@ -38,6 +38,9 @@ Con replicación lógica, se puede leer los wals con multiples herraientas inclu
 - https://www.postgresql.org/docs/9.6/static/logicaldecoding.html
 
 
+Tipos de replicación:
+https://www.postgresql.org/docs/current/static/different-replication-solutions.html
+
 
 
 # Master DB
