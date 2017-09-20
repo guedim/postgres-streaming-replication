@@ -14,7 +14,7 @@ https://hub.docker.com/r/thirtyx/transicator-postgres/
 
 
 
-
+- El mismo nivel de wal es necesario tanto en el maestro como en los standby
 - Superuser is required
 - No secuencias
 - Replicación Lógica 9.6 (extensión pglogical) no es igula a 10.0
@@ -25,7 +25,6 @@ pglogical        pglogical
                  builtin                builtin 
 
 
-
 	- PGLogical se mantendrá hasta EOL de Postgres 9.6
 		https://www.postgresql.org/message-id/CAH%2BGA0o5B89eDJjoKO-yN%3DXQEsC%2BpA2n9LuQPun0EAz9fVcUEA%40mail.gmail.com
 
@@ -34,6 +33,9 @@ pglogical        pglogical
 	- http://www.postgresql-archive.org/Dealing-with-logical-replication-td5971829.html
 
 
+
+Con replicación lógica, se puede leer los wals con multiples herraientas incluso nativas de Postgres:
+- https://www.postgresql.org/docs/9.6/static/logicaldecoding.html
 
 
 
