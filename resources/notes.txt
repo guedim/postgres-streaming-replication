@@ -62,6 +62,9 @@ https://github.com/confluentinc/bottledwater-pg  (ELF  :(  unmaintained)
 Plugin para conectarse con Kafka
 http://debezium.io/
 
+Leer los wals y pasarlos a Json
+https://github.com/eulerto/wal2json
+
 # Master DB
 max_connections = 500
 wal_level = hot_standby
