@@ -4,6 +4,7 @@ Links:
 https://severalnines.com/blog/become-postgresql-dba-how-setup-streaming-replication-high-availability
 https://www.howtoforge.com/tutorial/how-to-set-up-master-slave-replication-for-postgresql-96-on-ubuntu-1604/
 
+
 - Docker hub
 https://hub.docker.com/r/nebirhos/postgres-replication/
 https://hub.docker.com/r/ucalgary/postgres-bw/
@@ -11,6 +12,8 @@ https://hub.docker.com/r/ucalgary/postgres-bw/
 https://hub.docker.com/r/thirtyx/transicator-postgres/
 
 
+Links CDC
+https://www.simple.com/engineering/a-change-data-capture-pipeline-from-postgresql-to-kafka
 
 
 
@@ -42,13 +45,22 @@ Tipos de replicación:
 https://www.postgresql.org/docs/current/static/different-replication-solutions.html
 
 
+Opciones:
+http://hibernate.org/orm/envers/
+
+
+
 Tools:
 EDB Adappters para datos de Postgres a otros sistemas (Postgres, mysql, hadoop)
 https://www.enterprisedb.com/product/edb-postgres-platform/edb-postgres-data-adapters
 
 JDBC para leer CDC
 https://github.com/davecramer/presentations/blob/master/JDBC%20Performance%20Scale%2015x.pdf
+https://github.com/davecramer/LogicalDecode
+https://github.com/confluentinc/bottledwater-pg  (ELF  :(  unmaintained)
 
+Plugin para conectarse con Kafka
+http://debezium.io/
 
 # Master DB
 max_connections = 500
